@@ -6,5 +6,4 @@ platforms/
 plugins/
 .idea/
 
-www/css/ionic.app.css
-www/css/ionic.app.min.css
+www/css/*.css
