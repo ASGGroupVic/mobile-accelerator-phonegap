@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('mobile-accelerator-sample.services', [])
 
 /**
  * A simple example service that returns some data.

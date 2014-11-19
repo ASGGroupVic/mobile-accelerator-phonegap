@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('mobile-accelerator-sample.controllers', [])
 
 .controller('DashCtrl', function($scope) {
 })
