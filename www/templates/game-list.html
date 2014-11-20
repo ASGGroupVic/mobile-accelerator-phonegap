@@ -1,8 +1,10 @@
-<ion-view title="games">
+<ion-view title="What game do you want to buy?">
     <ion-content>
         <ion-list>
-            <ion-item ng-repeat="game in games" type="item-text-wrap" href="#/game/{{game.id}}/stockists">
-                {{game.name}}
+            <ion-item ng-repeat="game in games" class="item-thumbnail-right" type="item-text-wrap" href="#/game/{{game.id}}/stockists">
+                <img src="{{game.thumbnail}}">
+                <h2>{{game.name}}</h2>
+                <div>{{game.tagLine}}</div>
             </ion-item>
         </ion-list>
     </ion-content>
