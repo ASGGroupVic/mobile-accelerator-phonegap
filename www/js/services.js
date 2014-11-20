@@ -1,26 +1,28 @@
+'use strict';
+
 angular.module('mobile-accelerator-sample.services', [])
 
 /**
  * A simple example service that returns some data.
  */
-.factory('Friends', function() {
+.factory('GameService', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
+  var games = [
+    { id: 0, name: 'Doom', tagLine: 'The original first person shooter' },
+    { id: 1, name: 'Unreal Tournament', tagLine: 'Team shooter' },
+    { id: 2, name: 'Diablo II', tagLine: 'A Blizzard classic' },
+    { id: 3, name: 'Elite', tagLine: 'Early space sim' }
   ];
 
   return {
     all: function() {
-      return friends;
+      return games;
     },
-    get: function(friendId) {
+    get: function(id) {
       // Simple index lookup
-      return friends[friendId];
+      return games[id];
     }
-  }
+  };
 });

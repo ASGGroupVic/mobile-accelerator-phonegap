@@ -1,14 +1,14 @@
+'use strict';
+
 angular.module('mobile-accelerator-sample.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+
+.controller('GameListCtrl', function($scope, GameService) {
+  $scope.games = GameService.all();
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
+.controller('GameStockistsCtrl', function($scope, $stateParams, GameService) {
+  $scope.game = GameService.get($stateParams.id);
 })
 
 .controller('AccountCtrl', function($scope) {
