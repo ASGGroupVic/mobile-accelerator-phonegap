@@ -8,7 +8,7 @@
 
 'use strict';
 
-angular.module('mobile-accelerator-sample', ['ionic', 'mobile-accelerator-sample.controllers', 'mobile-accelerator-sample.services'])
+angular.module('mobile-accelerator-sample', ['ngCordova', 'ionic', 'mobile-accelerator-sample.controllers', 'mobile-accelerator-sample.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -37,6 +37,11 @@ angular.module('mobile-accelerator-sample', ['ionic', 'mobile-accelerator-sample
       url: '/game/list',
       templateUrl: 'templates/game-list.html',
       controller: 'GameListCtrl'
+    })
+    .state('gamephoto', {
+      url: '/game/photo',
+      templateUrl: 'templates/game-photo.html',
+      controller: 'GamePhotoCtrl'
     });
     //
     //.state('game.stockists', {
