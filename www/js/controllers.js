@@ -14,6 +14,8 @@ angular.module('mobile-accelerator-sample.controllers', ['ngCordova'])
   .controller('GamePhotoCtrl', function ($cordovaCamera) {
     var vm = this;
 
+    vm.imgSrc = "http://www.fillmurray.com/200/200";
+
     vm.takePicture = function () {
       var options = {
         quality: 75,
@@ -21,8 +23,8 @@ angular.module('mobile-accelerator-sample.controllers', ['ngCordova'])
         sourceType: Camera.PictureSourceType.CAMERA,
         allowEdit: true,
         encodingType: Camera.EncodingType.JPEG,
-        targetWidth: 300,
-        targetHeight: 300,
+        targetWidth: 200,
+        targetHeight: 200,
         popoverOptions: CameraPopoverOptions,
         saveToPhotoAlbum: false
       };
