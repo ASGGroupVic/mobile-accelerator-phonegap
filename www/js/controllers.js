@@ -4,7 +4,10 @@ angular.module('mobile-accelerator-sample.controllers', ['ngCordova'])
 
 
   .controller('GameListCtrl', function ($scope, GameService) {
-    $scope.games = GameService.all();
+    GameService.all().success(function(results) {
+      console.log('GameListCtrl async returned value');
+      $scope.games = results.results;
+    });
   })
 
   .controller('GameStockistsCtrl', function ($scope, $stateParams, GameService) {
