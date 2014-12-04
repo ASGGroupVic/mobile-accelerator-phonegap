@@ -8,9 +8,9 @@
 
 'use strict';
 
-angular.module('mobile-accelerator-sample', ['ngCordova', 'ionic', 'mobile-accelerator-sample.controllers', 'mobile-accelerator-sample.services', 'angular-data.DSCacheFactory'])
+angular.module('mobile-accelerator-sample', ['ngCordova', 'ionic', 'mobile-accelerator-sample.controllers', 'mobile-accelerator-sample.services'])
 
-.run(function($ionicPlatform, DSCacheFactory) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,8 +21,6 @@ angular.module('mobile-accelerator-sample', ['ngCordova', 'ionic', 'mobile-accel
       // org.apache.cordova.statusbar required
       window.StatusBar.styleDefault();
     }
-
-    DSCacheFactory("GameListCache", {storageMode: "localStorage", maxAge: 10000, deleteOnExpire: "aggressive"});
   });
 })
 
