@@ -1,8 +1,8 @@
 <ion-view title="What game do you want to buy?">
     <ion-content>
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="loadList(true)"></ion-refresher>
         <ion-list>
             <ion-item ng-repeat="game in games" class="item-thumbnail-right" type="item-text-wrap" href="#/game/photo">
-                <img src="{{game.thumbnail}}">
                 <h2>{{game.Title}}</h2>
                 <div>{{game.Description}}</div>
             </ion-item>
