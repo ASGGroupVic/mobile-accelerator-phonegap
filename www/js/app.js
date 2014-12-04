@@ -10,6 +10,14 @@
 
 angular.module('mobile-accelerator-sample', ['ngCordova', 'ionic', 'mobile-accelerator-sample.controllers', 'mobile-accelerator-sample.services'])
 
+.config( [
+  '$compileProvider',
+  function( $compileProvider )
+  { 
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
+  }
+])
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
