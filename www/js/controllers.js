@@ -1,12 +1,9 @@
 'use strict';
 
 angular.module('mobile-accelerator-sample.controllers', ['ngCordova'])
-
-
   .controller('GameListCtrl', function ($scope, GameService) {
-      $scope.loadList = function(flag){
-        GameService.all().then(function(results) {
-          console.log('GameListCtrl async returned value: ' + results.results);
+      $scope.loadList = function(forceRefresh){
+        GameService.all(forceRefresh).then(function(results) {
           $scope.games = results.results;
         }).finally(function(){
           $scope.$broadcast('scroll.refreshComplete');
