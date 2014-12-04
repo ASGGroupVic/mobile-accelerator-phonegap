@@ -3,19 +3,11 @@
 angular.module('mobile-accelerator-sample.controllers', ['ngCordova'])
 
 
-  .controller('GameListCtrl', function ($ionicLoading, $scope, GameService) {
+  .controller('GameListCtrl', function ($scope, GameService) {
       $scope.loadList = function(flag){
-        console.log('GameListCtrl loadList(' + flag + ')');
-        $ionicLoading.show({
-          template: 'Loading...'
-        });
-
-        GameService.all().success(function(results) {
-          $ionicLoading.hide();
+        GameService.all().then(function(results) {
           console.log('GameListCtrl async returned value: ' + results.results);
           $scope.games = results.results;
-        }).error(function(message){
-          $ionicLoading.hide();
         }).finally(function(){
           $scope.$broadcast('scroll.refreshComplete');
         });
