@@ -15,6 +15,9 @@ angular.module('mobile-accelerator-sample', ['ngCordova', 'ionic', 'mobile-accel
   function( $compileProvider )
   { 
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
+
+    //fix for wp8 mistaking ionic links for links to store apps
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|ghttps?|ms-appx|x-wmapp0):/);
   }
 ])
 
