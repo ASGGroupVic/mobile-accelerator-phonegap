@@ -3,6 +3,7 @@
         <ion-refresher pulling-text="Pull to refresh" on-refresh="loadList(true)"></ion-refresher>
         <ion-list>
             <ion-item ng-repeat="game in games" class="item-thumbnail-right" type="item-text-wrap" href="#/game/photo">
+                <img ng-hide="!game.ImageUrl" src="{{game.ImageUrl}}" alt="{{game.Title}}">
                 <h2>{{game.Title}}</h2>
                 <div>{{game.Description}}</div>
             </ion-item>
