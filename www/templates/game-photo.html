@@ -1,0 +1,17 @@
+<ion-view title="Take a photo to show how awesome you are!" ng-controller="GamePhotoCtrl as vm">
+    <ion-content has-header="true" padding="true">
+      <div class="card">
+        <div class="item item-image">
+          <img ng-src="{{vm.imgSrc}}" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="button button-balanced" ng-click="vm.takePicture()">Take Picture </button>
+        </div>
+        <div class="col">
+          <button class="button button-balanced" ng-click="vm.selectPicture()">Select Picture </button>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>
